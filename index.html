@@ -1,0 +1,311 @@
+<!doctype html>
+
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8">  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <title>Happy Birthday, Priyankaaa!</title>  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"   
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="   
+        crossorigin="anonymous" referrerpolicy="no-referrer">  
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">  
+  <style>  
+    * { margin: 0; padding: 0; box-sizing: border-box; }  
+    body {  
+      font-family: 'Poppins', sans-serif;  
+      background: linear-gradient(135deg, #ffccd5 0%, #ffb3c1 50%, #ff8fb1 100%);  
+      min-height: 100vh;  
+      display: flex;  
+      flex-direction: column;  
+      justify-content: center;  
+      align-items: center;  
+      overflow-x: hidden;  
+      color: #5a5a5a;  
+      position: relative;  
+      opacity: 0;  
+      transition: opacity 2s ease;  
+    }  
+    body.show { opacity: 1; }  /* Countdown overlay */  
+#countdownOverlay {  
+  position: fixed;  
+  top: 0; left: 0;  
+  width: 100%; height: 100%;  
+  background: radial-gradient(circle, #000000 0%, #1a1a1a 100%);  
+  color: white;  
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;  
+  align-items: center;  
+  font-family: 'Dancing Script', cursive;  
+  font-size: 3em;  
+  z-index: 9999;  
+}  
+#countText {  
+  font-size: 5em;  
+  color: #ffb6c1;  
+  text-shadow: 0 0 20px #ff69b4;  
+}  
+
+/* Fireworks */  
+.firework {  
+  position: fixed;  
+  width: 10px;  
+  height: 10px;  
+  background: transparent;  
+  border-radius: 50%;  
+  animation: explode 1s ease-out forwards;  
+}  
+@keyframes explode {  
+  0% { transform: scale(0.2); opacity: 1; }  
+  100% { transform: scale(3); opacity: 0; }  
+}  
+
+/* Glow effect for heading & name */  
+.birthday-heading {  
+  text-shadow: 0 0 10px #ff69b4, 0 0 20px #4682B4, 0 0 30px #5F9EA0;  
+  animation: glowPulse 2s infinite alternate;  
+}  
+.name {  
+  animation: nameGlow 2s infinite alternate;  
+}  
+@keyframes glowPulse { from { text-shadow: 0 0 5px #87CEFA; } to { text-shadow: 0 0 25px #00BFFF; } }  
+@keyframes nameGlow { from { text-shadow: 0 0 8px #ef476f; } to { text-shadow: 0 0 20px #ff99cc; } }  
+
+/* Original CSS from your version (balloons, cards, hearts, etc.) */  
+img { max-width: 100%; height: auto; }  
+
+.balloon { position: absolute; animation: float 10s ease-in-out infinite; z-index: 1; }  
+.balloon img { width: 80px; height: auto; }  
+.balloon.one { top: 10%; left: 5%; animation-delay: 0s; }  
+.balloon.two { top: 20%; right: 10%; animation-delay: 2s; }  
+.balloon.three { bottom: 15%; left: 15%; animation-delay: 4s; }  
+.balloon.four { top: 5%; left: 80%; animation-delay: 6s; }  
+.balloon.five { bottom: 5%; right: 20%; animation-delay: 8s; }  
+@keyframes float { 0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; } 25% { transform: translateY(-20px) rotate(5deg); opacity: 1; } 50% { transform: translateY(0px) rotate(0deg); opacity: 0.8; } 75% { transform: translateY(20px) rotate(-5deg); opacity: 1; } 100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; } }  
+
+.confetti-left, .confetti-right {  
+  position: absolute; width: 150px; height: 150px; background-size: contain; background-repeat: no-repeat;  
+  z-index: 0; opacity: 0.7;  
+}  
+.confetti-left { top: 0; left: -50px; transform: rotate(20deg); }  
+.confetti-right { top: 0; right: -50px; transform: rotate(-20deg); }  
+
+.balloon-floating {  
+  position: absolute; bottom: -150px; width: 60px; height: 80px;  
+  border-radius: 50%; opacity: 0.8; animation: floatUp 10s linear infinite; z-index: 0;  
+}  
+.balloon-floating::after {  
+  content: ''; position: absolute; bottom: -30px; left: 50%; width: 2px; height: 30px; background: #555; transform: translateX(-50%);  
+}  
+@keyframes floatUp { 0% { transform: translateY(0) translateX(0); opacity: 0; } 10% { opacity: 1; } 100% { transform: translateY(-120vh) translateX(-40px); opacity: 0; } }  
+.b1 { left: 10%; background: #ff5e5e; animation-delay: 0s; }  
+.b2 { left: 25%; background: #ffd166; animation-delay: 2s; }  
+.b3 { left: 40%; background: #06d6a0; animation-delay: 4s; }  
+.b4 { left: 60%; background: #118ab2; animation-delay: 6s; }  
+.b5 { left: 80%; background: #ef476f; animation-delay: 8s; }  
+
+.container { width: 100%; max-width: 600px; text-align: center; padding: 20px; z-index: 2; position: relative; }  
+.birthday-heading { font-family: 'Dancing Script', cursive; font-size: 3em; background: linear-gradient(90deg, black, blue, skyblue); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 2px 2px 6px rgba(0,0,0,0.15); margin-bottom: 20px; animation: pulse 2s infinite; }  
+@keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }  
+.birthday-heading i { margin: 0 10px; color: green; font-size: 0.8em; animation: bounce 1s ease-in-out infinite alternate; }  
+@keyframes bounce { 0% { transform: translateY(0); } 100% { transform: translateY(-5px); } }  
+.box__account { margin-bottom: 20px; }  
+.box__account .image img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 5px solid #ffd166; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 10px; }  
+.box__account .name { font-weight: 600; background: linear-gradient(90deg, #118ab2, #ef476f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 1px 1px 3px rgba(0,0,0,0.2); margin-bottom: 15px; }  
+.date__of__birth { font-size: 1.2em; margin-bottom: 20px; padding: 10px; background-color: #a0d2eb; border-radius: 10px; color: white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }  
+.content { display: flex; flex-direction: column; align-items: center; gap: 30px; width: 100%; }  
+@media (min-width: 600px) { .content { flex-direction: row; justify-content: center; align-items: center; } }  
+.btn { display: flex; flex-direction: column; gap: 15px; }  
+.btn button { padding: 12px 25px; font-size: 1em; border: none; border-radius: 10px; background: #ff5e5e; color: white; cursor: pointer; transition: background 0.3s ease; }  
+.btn button:hover { background: Green; }  
+.btn button i { margin-left: 5px; }  
+.btn button#btn__song { background: #5e5eff; }  
+.btn button#btn__song:hover { background: #3c3cdb; }  
+.youtube-container { position: relative; width: 100%; max-width: 560px; height: 0; padding-bottom: 56.25%; margin-top: 20px; display: none; }  
+.youtube-container.active { display: block; }  
+.youtube-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 15px; }  
+.card-container { perspective: 1000px; width: 300px; height: 400px; cursor: pointer; }  
+.card { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; transition: transform 0.8s; box-shadow: 0 10px 20px rgba(0,0,0,0.2); border-radius: 15px; }  
+.card.flipped { transform: rotateY(180deg); }  
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; }  
+.card-front { background: #fff; color: white; }  
+.card-front-image { width: 100%; height: 100%; object-fit: cover; border-radius: 15px; }  
+.tap-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: black; font-family: 'Dancing Script', cursive; font-size: 2rem; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); pointer-events: none; }  
+.card-back { background: linear-gradient(135deg, #bde0fe 0%, #cdb4db 100%); color: #5a5a5a; transform: rotateY(180deg); }  
+.card-title { font-family: 'Dancing Script', cursive; font-size: 1.8rem; margin-bottom: 15px; }  
+.scroll-message { font-size: 1rem; line-height: 1.5; text-align: center; max-height: 250px; overflow-y: auto; padding-right: 10px; -webkit-overflow-scrolling: touch; }  
+.boxMail { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); display: flex; justify-content: center; align-items: center; visibility: hidden; opacity: 0; transition: visibility 0.3s, opacity 0.3s; z-index: 1000; }  
+.boxMail.active { visibility: visible; opacity: 1; }  
+.boxMail-container { background: white; border-radius: 15px; max-width: 90%; padding: 25px; text-align: center; position: relative; box-shadow: 0 10px 20px rgba(0,0,0,0.2); }  
+.boxMail-container .fa-xmark { position: absolute; top: 10px; right: 10px; cursor: pointer; font-size: 1.2em; }  
+.boxMail-container h2, .boxMail-container h3 { margin: 10px 0; color: purple; }  
+.boxMail-container h2 { font-family: 'Dancing Script', cursive; font-size: 1.5em; }  
+.boxMail-container img { max-width: 80px; margin: 15px auto; }  
+.heart-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 0; }  
+.heart { position: absolute; top: -10vh; transform: translateX(-50%) rotate(45deg); animation: fall linear infinite; font-size: 20px; color: #ff5e5e; text-shadow: 0 0 5px rgba(0,0,0,0.1); }  
+.heart::before, .heart::after { content: ""; position: absolute; width: 100%; height: 100%; background-color: #ff5e5e; border-radius: 50%; }  
+.heart::before { top: -50%; } .heart::after { left: -50%; }  
+@keyframes fall { to { transform: translateY(105vh) rotate(360deg); } }
+
+  </style>  
+</head>  <body>  
+  <!-- Countdown screen -->  
+  <div id="countdownOverlay">  
+    <div>🎁 Surprise starts in...</div>  
+    <div id="countText">3</div>  
+  </div>    <div class="heart-container"></div>    <div class="balloon one"><img src="3.jpg" alt="red balloon"></div>  
+  <div class="balloon two"><img src="4.jpg" alt="blue balloon"></div>  
+  <div class="balloon three"><img src="6.jpg" alt="gold balloon"></div>  
+  <div class="balloon four"><img src="8.jpg" alt="green balloon"></div>  
+  <div class="balloon five"><img src="2.jpg" alt="pink balloon"></div>    <div class="balloon-floating b1"></div>  
+  <div class="balloon-floating b2"></div>  
+  <div class="balloon-floating b3"></div>  
+  <div class="balloon-floating b4"></div>  
+  <div class="balloon-floating b5"></div>    <div class="confetti-left" style="background-image: url('9.jpg');"></div>  
+  <div class="confetti-right" style="background-image: url('5.jpg');"></div>    <div class="container">  
+    <h1 class="birthday-heading"><i class="fas fa-party-popper"></i> Happy Birthday<br>  &nbsp; &nbsp;&nbsp;  To you wifey! <i class="fas fa-fire-cracker"></i></h1>  <div class="box__account">  
+  <div class="image">  
+    <img src="7.jpg" alt="Priyanka">  
+  </div>  
+  <div class="name"><i class="fa-solid fa-heart"></i> Dear Priyanka motiee <i class="fa-solid fa-heart"></i></div>  
+  <div class="date__of__birth"><span id="dateText"></span></div>  
+</div>  
+
+<div class="content">  
+  <div class="card-container" id="cardContainer">  
+    <div class="card" id="card">  
+      <div class="card-front">  
+        <div style="position: relative; width: 100%; height: 100%;">  
+            <img src="10.jpg" alt="Birthday Card Image" class="card-front-image">  
+            <h2 class="tap-text">Tap Me 💖</h2>  
+        </div>  
+      </div>  
+      <div class="card-back">  
+        <h2 class="card-title">Dear sweetheart</h2>  
+        <div class="scroll-message">  
+          💖🎂 Happy Birthday🎉✨<br>  
+         My love 💘, my heart ❤️, my everything 🌹… today is your special day, and I want the whole world 🌏 to know how truly amazing, beautiful, and magical ✨ you are! From your gorgeous smile 😍 to your sparkling eyes ✨, from your kind heart 💖 to your laughter that fills my soul with joy 😂… you are my dream come true 💫. Every moment with you is a treasure 🥰, every hug 🤗 is my favorite place in the world, and every “I love you” 💞 I say is just a tiny reflection of how deeply I feel for you ❤️💌.<br><br>
+
+On this birthday 🎂🎉, I wish for you a life filled with happiness 😄, love ❤️, and endless magic ✨. May your days be as bright 🌞 as your smile, your nights as peaceful 🌙 as your gentle soul, and your life as colorful 🌈 as the love 💖 we share. I want to hold your hand 🤝 today, tomorrow, and always, to laugh 😂, cry 😢, dance 💃🕺, and celebrate 🎊 every single beautiful moment with you. You are my forever 💞, my safe place 🏡, my heartbeat 💓, and my sweetest addiction 😘.<br><br>
+I hope this year brings you all your dreams 🌠, all the love ❤️, and all the joy 🥳 that your heart can hold 💖. I promise to always love you 💞, support you 💪, and cherish you 💎, through every smile 😁, every tear 😢, and every heartbeat 💓. You make my world brighter 🌟, my heart fuller 💗, and my life complete 🌹. Every moment with you is a fairy tale 🏰✨, every laugh is music 🎶💖, and every kiss 💋… oh, every kiss 💋 is pure magic ✨💫.<br><br>
+So blow your candles 🕯️🎂, my love, make the most beautiful wishes 🌠💖, and remember that I am yours forever 💞, loving you more with every breath 🌬️❤️, every heartbeat 💓, and every second ⏳ of my life. You are my queen 👑, my soulmate 💘, my sunshine 🌞, and my heart’s greatest treasure 💖.<br><br>
+Happy Birthday,Priyanka ji! 🎉💖🎂🥰💫<br>
+Forever and always your Man💞💋💖💌🌹🎶🎁🎈✨
+</div>
+</div>
+</div>
+</div>
+<div class="btn">
+<button id="btn__letter">Click Bebe💐 <i class="fa-regular fa-envelope"></i></button>
+<button id="btn__song">FOR YOU 🎶 <i class="fa-solid fa-music"></i></button>
+</div>
+
+<div class="youtube-container" id="youtubePlayer">  
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/n4nw1SluMgs?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+  </div>  
+</div>
+
+  </div>    <div class="boxMail">  
+    <div class="boxMail-container">  
+      <i class="fa-solid fa-xmark"></i>  
+      <h3>To You 💖</h3>  
+      <h2>Happy Birthday my love 🎂🎉❤️! You’re not just my girlfriend, you’re my world 🌍💫. I want to spend my whole future with you 👫💍. Every moment with you feels like home 🏡💖. I promise to always love you 💕, care for you 🤗, and stand by you forever 🌹✨. You’re my dream, my happiness, and my forever girl 💞😍.  
+      </h2>  
+      <img src="1.png" alt="Priyanka" class="birthday-pic">  
+    </div>  
+  </div>    <script>  
+    document.addEventListener('DOMContentLoaded', function () {  
+        // Countdown  
+        let countdownOverlay = document.getElementById('countdownOverlay');  
+        let countText = document.getElementById('countText');  
+        let count = 3;  
+        let countdownInterval = setInterval(() => {  
+            count--;  
+            if(count > 0){  
+                countText.textContent = count;  
+            } else {  
+                clearInterval(countdownInterval);  
+                countdownOverlay.style.display = 'none';  
+                document.body.classList.add('show');  
+                createFireworks();  
+            }  
+        }, 1000);  
+  
+        // Fireworks function  
+        function createFireworks() {  
+            for(let i=0; i<30; i++){  
+                let fire = document.createElement('div');  
+                fire.classList.add('firework');  
+                fire.style.top = Math.random()*100 + 'vh';  
+                fire.style.left = Math.random()*100 + 'vw';  
+                fire.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;  
+                document.body.appendChild(fire);  
+                setTimeout(()=> fire.remove(), 1000);  
+            }  
+            setInterval(()=> {  
+                for(let i=0; i<10; i++){  
+                    let fire = document.createElement('div');  
+                    fire.classList.add('firework');  
+                    fire.style.top = Math.random()*100 + 'vh';  
+                    fire.style.left = Math.random()*100 + 'vw';  
+                    fire.style.backgroundColor = `hsl(${Math.random()*360}, 100%, 50%)`;  
+                    document.body.appendChild(fire);  
+                    setTimeout(()=> fire.remove(), 1000);  
+                }  
+            }, 1500);  
+        }  
+  
+        // Typing effect for date  
+        const datetxt = "16 October";  
+        const charArrDate = datetxt.split('');  
+        let currentIndex = 0;  
+        const dateSpan = document.getElementById("dateText");  
+        const timeDatetxt = setInterval(() => {  
+            if (currentIndex < charArrDate.length) {  
+                dateSpan.textContent += charArrDate[currentIndex];  
+                currentIndex++;  
+            } else {  
+                clearInterval(timeDatetxt);  
+            }  
+        }, 150);  
+  
+        // Card flip toggle  
+        const card = document.getElementById('card');  
+        const cardContainer = document.getElementById('cardContainer');  
+        cardContainer.addEventListener('click', () => { card.classList.toggle('flipped'); });  
+  
+        // Mail popup toggle  
+        const mailBtn = document.getElementById('btn__letter');  
+        const boxmail = document.querySelector('.boxMail');  
+        const closeBtn = document.querySelector('.fa-xmark');  
+  
+        mailBtn.addEventListener('click', () => boxmail.classList.add('active'));  
+        closeBtn.addEventListener('click', () => boxmail.classList.remove('active'));  
+  
+        // YouTube player toggle  
+        const songBtn = document.getElementById('btn__song');  
+        const youtubePlayer = document.getElementById('youtubePlayer');  
+  
+        songBtn.addEventListener('click', () => {  
+            youtubePlayer.classList.toggle('active');  
+            if (youtubePlayer.classList.contains('active')) {  
+                songBtn.innerHTML = 'Hide Player 🎶 <i class="fa-solid fa-music"></i>';  
+            } else {  
+                songBtn.innerHTML = 'FOR YOU 🎶 <i class="fa-solid fa-music"></i>';  
+            }  
+        });  
+  
+        // Falling hearts  
+        function createHeart() {  
+            const heart = document.createElement('div');  
+            heart.classList.add('heart');  
+            document.querySelector('.heart-container').appendChild(heart);  
+            heart.style.left = `${Math.random() * 100}vw`;  
+            heart.style.animationDuration = `${Math.random() * 2 + 3}s`;  
+            heart.style.opacity = Math.random();  
+            setTimeout(() => { heart.remove(); }, 5000);  
+        }  
+        setInterval(createHeart, 300);  
+    });  
+  </script>  </body>  
+</html>  
